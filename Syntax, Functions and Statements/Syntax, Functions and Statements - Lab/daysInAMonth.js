@@ -1,5 +1,5 @@
 function daysInAMonth(month, year){
-let numberOfDays= new Date(year, month, 0).getDate();
-console.log(numberOfDays);
+let myDate= new Date(year, month, 0).getDate();
+console.log(date);
 }
-daysInAMonth(2, 2021)
+daysInAMonth(1, 2012)

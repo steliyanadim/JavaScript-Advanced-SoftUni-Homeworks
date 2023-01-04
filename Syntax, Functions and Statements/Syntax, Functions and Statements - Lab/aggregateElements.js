@@ -5,7 +5,7 @@ function aggregateElements(elements) {
 
     for (let num of elements) {
         sum += num;
-        concat += String(num)
+        concat += String(num);
         inverseSum(num);
     }
 
