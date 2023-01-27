@@ -1,21 +1,21 @@
 function ticTacToe(cordinates) {
-    let dashboard = [[false, false, false],
+    const dashboard = [[false, false, false],
     [false, false, false],
     [false, false, false]];
 
     let win = false;
     let moves = 9;
     let mark = 'X';
-
+    
     for (let cordinate of cordinates) {
-        let [inx1, inx2] = cordinate.split(' ');
+        const [inx1, inx2] = cordinate.split(' ')
         moves--;
 
         if (dashboard[inx1][inx2]) {
-            console.log('This place is already taken. Please choose another!');
+            console.log("This place is already taken. Please choose another!");
             moves++;
             continue;
-        } else {
+        } else{
             dashboard[inx1][inx2] = mark;
             checkForWin(inx1, inx2, mark)
             if (win) {
@@ -23,15 +23,12 @@ function ticTacToe(cordinates) {
                 break;
             }
         }
-
         if (moves === 0) {
-            console.log('The game ended! Nobody wins :(');
+            console.log("The game ended! Nobody wins :(");
             break;
         }
-
-        mark = mark === 'X' ? 'O' : 'X';
+       mark = mark === 'X' ?'O' : 'X';
     }
-
     function checkForWin(inx1, inx2, mark) {
         if ((dashboard[inx1][0] === mark && dashboard[inx1][1] === mark && dashboard[inx1][2] === mark) ||
             (dashboard[0][inx2] === mark && dashboard[1][inx2] === mark && dashboard[2][inx2] === mark) ||
@@ -40,7 +37,6 @@ function ticTacToe(cordinates) {
             win = true;
         }
     }
-    
     dashboard.forEach(row => console.log(row.join('\t')));
 }
 ticTacToe(["0 1",
